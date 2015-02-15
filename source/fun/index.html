@@ -1,0 +1,43 @@
+---
+layout: default
+title: Fun
+---
+<h4>
+  Add Prime Numbers
+</h4>
+<div class='primes-sum'></div>
+<ul>
+  <li>
+    <label for='number'>
+      Enter a positive integer number:
+    </label>
+    <input id='upper-limit' type='text' name='number' value='100'></input>
+  </li>
+
+<button class='btn' type='button'>
+  Go
+</button>
+
+<script>
+  var primeSum = function primeSum(){
+    $('.btn').click(function(){
+      limit = $('#upper-limit').val();
+      if(limit === ""){
+        $('.primes-sum').html(0);
+      }
+      else if(limit > 20000){
+        $('.primes-sum').html("Do not even think about it");
+      }
+      else {
+        $.get('/primes?ajax=true&limit=' + limit, function(data){
+          console.log('data', data);
+          $('.primes-sum').html(data);
+        });
+      }
+    });
+  }
+
+  primeSum();
+</script>
+</ul>
+
