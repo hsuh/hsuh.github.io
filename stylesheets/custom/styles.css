@@ -3,3 +3,24 @@ img.mugshot {
   margin-top: 30px;
   margin-left: 130px;
 }
+
+header#header {
+  width: 100%;
+  background-color: #ecf0f1;
+  padding-bottom: 45px;
+}
+
+#header h1 {
+  margin: 15px 0;
+}
+
+#header hr {
+  border-width: 1px;
+  color: #a17917;
+  margin-top: 25px;
+}
+
+#main-nav {
+  background-color: #ecf0f1;
+  margin-top: 3px;
+}
