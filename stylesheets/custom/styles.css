@@ -24,3 +24,11 @@ header#header {
   background-color: #ecf0f1;
   margin-top: 3px;
 }
+
+.small-wonder img {
+  width: 350px;
+}
+
+.family {
+  display: none;
+}

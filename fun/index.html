@@ -7,7 +7,7 @@
 
 	<meta name="author" content="Hsu Hlaing">
 
-<meta name="description" content=" Add Prime Numbers Enter a positive integer number: Go "> <meta name="keywords" content="">
+<meta name="description" content="Add Prime Numbers This doesn't work yet since github pages will only serve static pages. boohoo .. No fun to be had here. I'll fix this when I have &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -27,7 +27,7 @@
 <body>
 	<header id="header" class="inner"><h1><a href="/">Hsu Hlaing</a></h1>
 <hr>
-<span class="tagline"></span>
+<span class="tagline">Blessed are the forgetful, for they get the better even of their blunders.</span>
 <nav id="main-nav"><ul>
 	<li><a href="/about">About</a></li>
 	<li><a href="/fun">Fun</a></li>
@@ -54,6 +54,16 @@
 	<div id="content" class="inner"><h4>
   Add Prime Numbers
 </h4>
+<div>
+  This doesn&#8217;t work yet since github pages will only serve static pages. boohoo ..
+  No fun to be had here. I&#8217;ll fix this when I have time. :P
+</div>
+
+<div class='small-wonder'>
+  <img class='alone' src="/images/smallwonder.jpg"/>
+  <img class='family' src="/images/smallwonderfamily.jpg"/>
+</div>
+
 <div class='primes-sum'></div>
 <ul>
   <li>
@@ -69,7 +79,8 @@
 
 <script>
   var primeSum = function primeSum(){
-    $('.btn').click(function(){
+    $('.btn').click(function(event){
+      event.preventDefault();
       limit = $('#upper-limit').val();
       if(limit === ""){
         $('.primes-sum').html(0);
@@ -78,6 +89,8 @@
         $('.primes-sum').html("Do not even think about it");
       }
       else {
+        $('.small-wonder .alone').toggle();
+        $('.small-wonder .family').toggle();
         $.get('/primes?ajax=true&limit=' + limit, function(data){
           console.log('data', data);
           $('.primes-sum').html(data);
